@@ -1,24 +1,16 @@
 {
-  "name": "techalfa_app",
+  "name": "techalfa-community-platform",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "oxlint",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "react-router-dom": "^7.18.4"
-  },
-  "devDependencies": {
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.7",
-    "@vitejs/plugin-react": "^6.1.1",
-    "oxlint": "^1.81.0",
-    "vite": "^8.3.0"
+    "dev:frontend": "npm run dev --workspace @techalfa/frontend",
+    "dev:backend": "npm run dev --workspace @techalfa/backend",
+    "build": "npm run build --workspace @techalfa/frontend",
+    "lint": "npm run lint --workspace @techalfa/frontend && npm run lint --workspace @techalfa/backend",
+    "start": "npm run start --workspace @techalfa/backend"
   }
 }

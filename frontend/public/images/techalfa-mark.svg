@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="techalfa" x1="31" y1="166" x2="168" y2="37" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d15bc7"/>
+      <stop offset=".52" stop-color="#7652e8"/>
+      <stop offset="1" stop-color="#53d9e8"/>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#techalfa)" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="4.5" d="M48 39C32 54 23 76 24 99c1 40 32 73 73 76 37 3 69-22 78-57 5-20 1-42-10-59"/>
+    <path stroke-width="4" d="M52 48c18-26 42-39 72-37M38 73c13-25 36-42 65-48M29 94c8-25 27-44 51-57M24 109c5-24 20-45 40-61"/>
+    <path stroke-width="4.2" d="M45 70c23-24 60-34 91-22 22 8 38 27 43 50M35 82c21-22 51-31 80-25 29 6 51 26 60 53M27 96c17-19 43-29 69-27 34 2 63 24 74 56M25 111c14-16 34-25 55-26 38-2 73 21 87 56M29 127c11-12 26-20 42-22 37-6 72 13 89 45M37 143c8-9 19-15 31-18 30-7 62 7 79 32"/>
+    <path stroke-width="3.8" d="M54 64c-7 17-7 39 0 58 11 29 37 50 67 55M67 56c-11 17-14 40-8 62 8 30 29 52 57 62M81 50c-13 18-18 42-13 65 6 29 24 52 49 65M96 47c-15 19-22 43-18 67 4 29 20 54 42 69M111 48c-16 21-23 46-19 71 3 27 16 51 37 68M126 53c-16 21-23 47-20 72 3 24 14 46 32 64M140 63c-15 20-22 44-20 68 1 20 9 39 22 55"/>
+  </g>
+</svg>

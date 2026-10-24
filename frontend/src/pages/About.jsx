@@ -1,0 +1,17 @@
+import { Link } from "react-router-dom";
+import PageIntro from "../components/PageIntro";
+import { activities } from "../data";
+
+const values = ["Innovation", "Learning", "Collaboration", "Accessibility", "Community", "Impact"];
+
+export default function About() {
+  return <main className="page-main">
+    <PageIntro eyebrow="About TechAlfa" title="A student community built around what’s next." description="TechAlfa India connects students, colleges, industry professionals and organizations through technology, innovation and real-world opportunities." />
+    <section className="section wrap about-columns"><article className="info-card"><span className="eyebrow">Our mission</span><h2>Empower students through technology and innovation.</h2><p>We create ways for students to learn by doing, explore ideas with peers, and connect their skills to real opportunities.</p></article><article className="info-card info-card-tint"><span className="eyebrow">Our vision</span><h2>A connected student community that can build a better future.</h2><p>We want technology learning and participation to be open, practical, and collaborative across campuses.</p></article></section>
+    <section className="section wrap"><div className="section-heading"><div><span className="eyebrow">Our story</span><h2>Built by students, growing together</h2></div></div><div className="story-panel"><p>TechAlfa brings together student-led learning, events and community programs. The project is growing its campus connections and creating more opportunities to learn, build and share.</p><p className="data-note">Verified founding date, milestones and founder profile will be added when supplied by the team.</p></div></section>
+    <section className="section wrap about-columns"><article className="info-card"><span className="eyebrow">A note from the founder</span><h2>Founder message</h2><p>The founder’s approved message, name and portrait will appear here once provided.</p></article><article className="info-card info-card-tint"><span className="eyebrow">Our approach</span><h2>Make it easier to take part.</h2><p>We bring learning, student leadership and industry connection into one growing community.</p></article></section>
+    <section className="section wrap"><div className="section-heading"><div><span className="eyebrow">What guides us</span><h2>Our values</h2></div></div><div className="value-grid">{values.map((value, i) => <article className="value-card" key={value}><span>0{i + 1}</span><h3>{value}</h3></article>)}</div></section>
+    <section className="section wrap"><div className="section-heading"><div><span className="eyebrow">What we do</span><h2>Learn, build, connect</h2></div></div><div className="activity-grid">{activities.map(([icon, title, description]) => <article className="activity-card" key={title}><span className="icon-box" aria-hidden="true">{icon === "code" ? "&lt;/&gt;" : "✦"}</span><h3>{title}</h3><p>{description}</p></article>)}</div></section>
+    <section className="section wrap"><div className="callout"><div><span className="eyebrow">Get involved</span><h2>There is room to learn and contribute.</h2><p>Explore events, opportunities, or ways to join the community.</p></div><div className="button-row"><Link className="button button-secondary" to="/events">View events</Link><Link className="button button-primary" to="/join">Join community</Link></div></div></section>
+  </main>;
+}

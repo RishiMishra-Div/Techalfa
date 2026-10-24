@@ -1,0 +1,6 @@
+import PageIntro from "../components/PageIntro";
+
+export default function Legal({ type }) {
+  const privacy = type === "privacy";
+  return <main className="page-main"><PageIntro eyebrow="TechAlfa India" title={privacy ? "Privacy information" : "Terms & conditions"} description={privacy ? "How information submitted through this website is handled." : "Information about using this website."} /><section className="section wrap guide-body"><div className="notice-card"><h2>{privacy ? "Policy details are being prepared" : "Terms are being prepared"}</h2><p>{privacy ? "Forms on this site collect the information shown beside each field so the TechAlfa team can respond to registrations and enquiries. Submitted form information is stored in the configured MongoDB database and may be emailed to the configured team inbox." : "Website content and event details may change as the organizers confirm them. Event dates, registration rules and participation requirements will be published with each official announcement."}</p><p>Please contact <a href="mailto:techalfa2026@gmail.com">techalfa2026@gmail.com</a> with questions. Full policy and terms text should be reviewed and approved by TechAlfa before public launch.</p></div></section></main>;
+}
