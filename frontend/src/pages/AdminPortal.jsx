@@ -83,7 +83,7 @@ async function api(path, options = {}) {
 }
 
 function Logo({ suffix = "Admin" }) {
-  return <div className="logo"><img className="brand-image" src="/images/techalfa-logo.png" alt="TechAlfa” Technology & Innovation" /><span className="g">{suffix}</span></div>;
+  return <div className="logo"><img className="brand-image" src="/images/techalfa-logo.jpg" alt="TechAlfa” Technology & Innovation" /><span className="g">{suffix}</span></div>;
 }
 
 

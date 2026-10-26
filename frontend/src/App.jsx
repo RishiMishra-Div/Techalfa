@@ -37,7 +37,7 @@ function MarketingApp() {
   return <>
     <div aria-hidden="true" dangerouslySetInnerHTML={{ __html: iconDefinitions }} />
     <header><div className="w nav">
-      <a className="logo" href="#/" aria-label="TechAlfa India home"><img className="brand-image" src="/images/techalfa-logo.png" alt="TechAlfa — Technology & Innovation" /></a>
+      <a className="logo" href="#/" aria-label="TechAlfa India home"><img className="brand-image" src="/images/techalfa-logo.jpg" alt="TechAlfa — Technology & Innovation" /></a>
       <nav className="links" id="links" aria-label="Main" />
       <div className="nav-actions" aria-label="Quick links">
         <a className="btn nav-contact" href="#/contact"><Mail size={15} aria-hidden="true" /><span>Contact</span></a>
@@ -48,7 +48,7 @@ function MarketingApp() {
     <div id="sp" aria-hidden="true" />
     <main id="app" />
     <footer><div className="w"><div className="fg">
-      <div><a className="logo" href="#/" aria-label="TechAlfa India home"><img className="brand-image footer-brand-image" src="/images/techalfa-logo.png" alt="TechAlfa — Technology & Innovation" /></a><p style={{ fontSize: ".92rem" }}>Empowering students through technology, innovation and opportunities.</p></div>
+      <div><a className="logo" href="#/" aria-label="TechAlfa India home"><img className="brand-image footer-brand-image" src="/images/techalfa-logo.jpg" alt="TechAlfa — Technology & Innovation" /></a><p style={{ fontSize: ".92rem" }}>Empowering students through technology, innovation and opportunities.</p></div>
       <div><h3>Quick Links</h3><a href="#/about">About</a><a href="#/events">Events</a><a href="#/opportunities">Opportunities</a><a href="#/community">Community</a></div>
       <div><h3>Explore</h3><a href="#/gallery">Gallery</a><a href="#/resources">Resources</a><a href="#/team">Team</a><a href="#/partners">Partners</a><a href="/student">Student Portal</a><a href="#/contact">Contact</a></div>
       <div><h3>Connect</h3><div className="footer-social-links" role="group" aria-label="TechAlfa social media">

@@ -25,7 +25,7 @@ export default function Navbar() {
   }, [open]);
   return <header className="site-header"><nav className="nav wrap" aria-label="Main navigation">
     <div className="nav-main">
-      <Link to="/" className="brand" aria-label="TechAlfa India home"><img className="brand-image" src="/images/techalfa-logo.png" alt="TechAlfa — Technology & Innovation" /></Link>
+      <Link to="/" className="brand" aria-label="TechAlfa India home"><img className="brand-image" src="/images/techalfa-logo.jpg" alt="TechAlfa — Technology & Innovation" /></Link>
       <Link className="button button-primary nav-join" to="/join">Join Community <ArrowUpRight size={16} aria-hidden="true" /></Link>
       <button className="menu-toggle" type="button" aria-expanded={open} aria-controls="primary-navigation" aria-label={open ? "Close navigation menu" : "Open navigation menu"} onClick={() => setOpen((value) => !value)}>{open ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}</button>
     </div>

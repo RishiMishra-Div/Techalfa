@@ -94,9 +94,9 @@ export default function StudentPortal() {
   const upcomingRegistrations = registrations.filter((item) => !isPastEvent(item.event));
   const pastRegistrations = registrations.filter((item) => isPastEvent(item.event));
 
-  if (loading) return <div className="student-loading"><img className="student-brand-image" src="/images/techalfa-logo.png" alt="TechAlfa" /><p>Opening your student portal…</p></div>;
+  if (loading) return <div className="student-loading"><img className="student-brand-image" src="/images/techalfa-logo.jpg" alt="TechAlfa" /><p>Opening your student portal…</p></div>;
   if (!student) return <div className="student-auth-page">
-    <a className="student-brand" href="/"><img className="student-brand-image" src="/images/techalfa-logo.png" alt="" /><span>TechAlfa <b>India</b></span></a>
+    <a className="student-brand" href="/"><img className="student-brand-image" src="/images/techalfa-logo.jpg" alt="" /><span>TechAlfa <b>India</b></span></a>
     <div className="student-auth-card">
       <div className="student-eyebrow"><ShieldCheck size={16} /> YOUR STUDENT SPACE</div>
       <h1>{mode === "login" ? <>Welcome <span>back.</span></> : <>Make room for <span>what’s next.</span></>}</h1>
@@ -119,7 +119,7 @@ export default function StudentPortal() {
   const firstName = student.name.split(" ")[0];
   return <div className="student-shell">
     <aside className={`student-sidebar ${menuOpen ? "open" : ""}`}>
-      <a className="student-brand" href="/"><img className="student-brand-image" src="/images/techalfa-logo.png" alt="" /><span>TechAlfa <b>India</b></span></a>
+      <a className="student-brand" href="/"><img className="student-brand-image" src="/images/techalfa-logo.jpg" alt="" /><span>TechAlfa <b>India</b></span></a>
       <div className="student-side-label">STUDENT SPACE</div>
       <nav>{navigation.map(([id, label, Icon]) => <button key={id} className={view === id ? "active" : ""} onClick={() => { setView(id); setMenuOpen(false); setError(""); }}><Icon size={18} />{label}{id === "events" && registrations.length > 0 && <span className="student-nav-count">{registrations.length}</span>}</button>)}</nav>
       <div className="student-sidebar-bottom"><div className="student-mini-profile"><StudentAvatar student={student} /><div><strong>{student.name}</strong><span>{student.college}</span></div></div><button className="student-signout" onClick={logout}><LogOut size={17} /> Sign out</button><a className="student-site-link" href="/">← Back to website</a></div>
