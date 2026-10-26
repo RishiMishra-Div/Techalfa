@@ -62,7 +62,7 @@ Backend settings are listed in `backend/.env.example`:
 
 Frontend settings are in `frontend/.env.example`:
 
-- `VITE_API_BASE_URL`: leave blank in development to use Vite's proxy; set to the backend origin when frontend and backend are deployed separately.
+- `VITE_API_BASE_URL`: leave blank in development to use Vite's proxy; set to the backend origin when frontend and backend are deployed separately. All frontend API requests, including public content, use this setting.
 - `VITE_API_PROXY_TARGET`: local backend URL used by Vite's development proxy.
 
 Never commit `.env` files or put database or SMTP credentials in frontend code.
