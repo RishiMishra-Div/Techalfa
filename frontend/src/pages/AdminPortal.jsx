@@ -20,6 +20,9 @@ function legacyPageContent(value) {
   return { type: "doc", content: paragraphs.length ? paragraphs.map((text) => ({ type: "paragraph", content: [{ type: "text", text }] })) : [{ type: "paragraph" }] };
 }
 
+
+
+// function parseFaqImport(source) {
 function parseFaqImport(source) {
   const text = String(source || "").trim();
   if (!text) throw new Error("Paste FAQ text or choose a CSV file first.");
@@ -64,8 +67,11 @@ function parseFaqImport(source) {
   return rows.map(({ question, answer }) => ({ question: question.trim(), answer: answer.trim() }));
 }
 
+
+const apiBase = (import.meta.env.VITE_API_BASE_URL || "").replace(/\/$/, "");
+
 async function api(path, options = {}) {
-  const response = await fetch(`/api/admin${path}`, {
+  const response = await fetch(`${apiBase}/api/admin${path}`, {
     credentials: "include",
     ...options,
     headers: { ...(options.body ? { "Content-Type": "application/json" } : {}), ...options.headers },
@@ -77,9 +83,12 @@ async function api(path, options = {}) {
 }
 
 function Logo({ suffix = "Admin" }) {
-  return <div className="logo"><img className="brand-image" src="/images/techalfa-logo.png" alt="TechAlfa â€” Technology & Innovation" /><span className="g">{suffix}</span></div>;
+  return <div className="logo"><img className="brand-image" src="/images/techalfa-logo.png" alt="TechAlfa” Technology & Innovation" /><span className="g">{suffix}</span></div>;
 }
 
+
+
+// function Login({ onLogin }) {
 function Login({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -98,10 +107,13 @@ function Login({ onLogin }) {
       <label htmlFor="admin-password">Password</label><input id="admin-password" type="password" autoComplete="current-password" required value={password} onChange={(e) => setPassword(e.target.value)} />
       {error && <p className="admin-error" role="alert">{error}</p>}
       <button className="btn p" type="submit" disabled={busy}>{busy ? "Signing inâ€¦" : "Sign in"}</button>
-    </form><a className="admin-back" href="/">â† Back to TechAlfa India</a>
+    </form><a className="admin-back" href="/">Back to TechAlfa India</a>
   </div></div>;
 }
 
+
+
+// function AdminPortal() {
 function Status({ value }) {
   const cls = ["Open", "Live", "Approved", "Completed"].includes(value) ? "g" : ["Pending", "Draft"].includes(value) ? "w" : ["Closed", "Rejected"].includes(value) ? "b" : "";
   return <span className={`st ${cls}`}>{value}</span>;
@@ -122,6 +134,7 @@ function TableView({ title, rows, columns, onAdd, onEdit, onDelete, onStatus, se
   </>;
 }
 
+// function RecordDialog({ config, record, onClose, onSave }) {
 function RecordDialog({ config, record, onClose, onSave }) {
   const [values, setValues] = useState(() => Object.fromEntries(config.fields.map(([key, , type, choices]) => [key, key === "pageContent" ? legacyPageContent(record?.pageContent || record?.body) : type === "checkbox" ? Boolean(record?.[key]) : record?.[key] ?? (type === "select" ? choices[0] : "")])));
   const [thumbnail, setThumbnail] = useState(null);
@@ -303,8 +316,21 @@ export default function AdminPortal() {
     return () => { cancelled = true; };
   }, [loginPage, reload]);
 
-  async function login(email, password) { await api("/login", { method: "POST", body: JSON.stringify({ email, password }) }); }
-  async function logout() { await api("/logout", { method: "POST" }); window.location.assign("/admin/login"); }
+
+  async function login(email, password) { 
+    await api("/login",{ 
+      method: "POST", 
+      body: JSON.stringify({ email, password }) 
+    }); }
+
+
+
+  async function logout() { 
+    await api("/logout", {
+      method: "POST"});
+      window.location.assign("/admin/login"); }
+
+
   async function saveRecord(kind, record, values, imageChange = {}) {
     const payload = { ...values };
     let uploadedUrl = "";

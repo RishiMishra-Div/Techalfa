@@ -45,11 +45,13 @@ export function readAdminSession(token) {
 }
 
 export function sessionCookie(token) {
-  return `${cookieName}=${token}; Path=/api/admin; HttpOnly; SameSite=Lax; Max-Age=${sessionAgeSeconds}${process.env.NODE_ENV === "production" ? "; Secure" : ""}`;
+  const sameSite = process.env.NODE_ENV === "production" ? "None; Secure" : "Lax";
+  return `${cookieName}=${token}; Path=/api/admin; HttpOnly; SameSite=${sameSite}; Max-Age=${sessionAgeSeconds}`;
 }
 
 export function clearSessionCookie() {
-  return `${cookieName}=; Path=/api/admin; HttpOnly; SameSite=Lax; Max-Age=0${process.env.NODE_ENV === "production" ? "; Secure" : ""}`;
+  const sameSite = process.env.NODE_ENV === "production" ? "None; Secure" : "Lax";
+  return `${cookieName}=; Path=/api/admin; HttpOnly; SameSite=${sameSite}; Max-Age=0`;
 }
 
 export function getSessionFromRequest(req) {

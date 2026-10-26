@@ -74,7 +74,7 @@ npm run build
 npm start
 ```
 
-Build the frontend before deploying it to a static host. Deploy the backend separately with its environment variables. Set `VITE_API_BASE_URL` to the deployed API origin during the frontend build, then add that frontend origin to `FRONTEND_ORIGINS` on the backend.
+Build the frontend before deploying it to a static host. Deploy the backend separately with its environment variables. Set `VITE_API_BASE_URL` to the deployed API origin (for example, the Render service URL without a trailing slash) in the frontend deployment environment, then rebuild/redeploy the frontend. Add the frontend origin (for example, `https://techalfa-sand.vercel.app`) to `FRONTEND_ORIGINS` on the backend. Production admin session cookies use `SameSite=None; Secure` so they can be sent between the separately hosted frontend and backend.
 
 ## Content notes
 

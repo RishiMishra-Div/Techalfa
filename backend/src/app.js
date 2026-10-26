@@ -12,7 +12,9 @@ import studentsRouter from "./routes/students.js";
 import requireAdmin from "./middleware/requireAdmin.js";
 import { connectToMongo, databaseStatus } from "./services/database.js";
 
+
 const app = express();
+
 const limits = new Map();
 const inFlightSubmissions = new Set();
 const maxBodyBytes = "256kb";
@@ -25,6 +27,14 @@ const allowedInterests = new Set([
   "Projects and open source",
   "Other",
 ]);
+
+
+
+
+
+
+
+
 const allowedOrigins = new Set((process.env.FRONTEND_ORIGINS || "http://localhost:5173,http://127.0.0.1:5173").split(",").map((origin) => origin.trim()).filter(Boolean));
 const trustedProxyHops = Number(process.env.TRUST_PROXY_HOPS || 0);
 
